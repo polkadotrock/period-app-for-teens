@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* resets */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+/* custom properties */
+    :root {
+        /* font family */
+        --ff-content: 'Roboto', sans-serif;;
+
+        /* font size */
+    }
+
+/* presets */
+    body {
+        font-family: var(--ff-content);
+    }
+
+/* checkmark TO BE DELETED */
+    img {
+        width: 50px;
+    }
