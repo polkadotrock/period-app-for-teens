@@ -15,7 +15,7 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 
 ### Install
 1. Install [Node.js](https://nodejs.org/en)
-2. In the terminal, run `npm run dev`
+2. In the terminal, run `npm install`
 3. In `config` folder, change `config-example.env` to `config.env`
 
 ### Start server
