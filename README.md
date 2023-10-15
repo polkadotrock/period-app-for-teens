@@ -12,26 +12,19 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 4. Run `git clone paste-the-copied-url-here`
 5. `cd` into the cloned repo
 6. Run `git checkout -b your-own-branch` to checkout (create) a new branch to work on
-7. `*skip to 'Install' section*`
-8. Before you push your commit, run `git pull` to make sure your local repo is up-to-date with the original remote repo
-9. Do your `git add .` and `git commit -m 'msg'`
-10. `git push -u origin your-own-branch` to push
-11. Go to your cloned repo and make a pull request
-12. The `base` should be the original repo, `head` is your own local copy `your-own-branch`
-13. Create pull request
 
 ### Install
 1. Install [Node.js](https://nodejs.org/en)
 2. In the terminal, run `npm install`
+3. In `config` folder, change `config-example.env` to `config.env`
 
 ### Start server
 1. In the terminal, run `npm start`
-2. In `config` folder, change `config-example.env` to `config.env`
-3. If you see `Server is running on port 3000`, you have successfully started the server 
-4. Open browser, go to `localhost:3000`
-5. You should be able to see content from `views/dashboard.ejs` file
-6. You can now edit any files, then refresh the page in the browser to view changes
-7. To stop the server from running (in order to use the terminal in VS Code again), press `Ctrl + C`
+2. If you see `Server is running on port 3000`, you have successfully started the server 
+3. Open browser, go to `localhost:3000`
+4. You should be able to see content from `views/dashboard.ejs` file
+5. You can now edit any files, then refresh the page in the browser to view changes
+6. To stop the server from running (in order to use the terminal in VS Code again), press `Ctrl + C`
 
 ### Add/edit files
 1. To add a new EJS file, run `touch views/file-name-you-want.ejs` from the terminal
@@ -40,3 +33,11 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 4. You can copy everything from `dashboard.ejs` to your newly created EJS file, then replace the content inside `<body>`
 5. To link to your own JS file from an EJS file, add `<%- include('/js/your-js-file.js') %>` to the bottom of the EJS file (where you would add your `<script>` tag)
 6. To view your new EJS file, go to `routes/index.js` and follow the instruction there
+
+### Create a pull request
+1. Before you push your commit, run `git pull` to make sure your local repo is up-to-date with the original remote repo
+2. Do your `git add .` and `git commit -m 'msg'`
+3. `git push -u origin your-own-branch` to push
+4. Go to your cloned repo and make a pull request
+5. The `base` should be the original repo, `head` is your own local copy `your-own-branch`
+6. Create pull request
