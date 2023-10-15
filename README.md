@@ -30,7 +30,7 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 1. To add a new EJS file, run `touch views/file-name-you-want.ejs` from the terminal
 2. All EJS files should be in `views` folder
 3. All CSS, JS, and image files should be in their own folder in `public` folder
-4. You can copy everything from `dashboard.ejs` to your newly created EJS file, then replace the content inside `<body>`
+4. You can copy everything from `dashboard.ejs` to your newly created EJS file, then replace the content.
 5. To link to your own JS file from an EJS file, add `<%- include('/js/your-js-file.js') %>` to the bottom of the EJS file (where you would add your `<script>` tag)
 6. To view your new EJS file, go to `routes/index.js` and follow the instruction there
 7. I've added Bootstrap framework. You guys can take a look at the [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
