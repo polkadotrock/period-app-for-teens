@@ -3,9 +3,12 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-dotenv.config({ path: './config/config.env' });
+// load config !important
+dotenv.config({ path: './config/config.env'});
+
+// export port
+const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 

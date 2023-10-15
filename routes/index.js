@@ -11,9 +11,8 @@ router.get('/', (req, res) => {
 ------ TEST YOUR EJS FILE HERE ------
 
 replace '/test' and 'test' with the name of your file for testing purposes
-in browser, go to http://localhost:3000/test (replace test with the name of your ejs file) to view
+in browser, go to http://localhost:3000/test (replace 'test' with the name of your ejs file) to view
 */
-
 router.get('/test', (req, res) => {
     res.render('test');
 });
