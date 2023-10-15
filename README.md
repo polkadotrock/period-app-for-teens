@@ -26,11 +26,12 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 
 ### Start server
 1. In the terminal, run `npm start`
-2. If you see `Server is running on port 3000`, you have successfully started the server 
-3. Open browser, go to `localhost:3000`
-4. You should be able to see content from `views/dashboard.ejs` file
-5. You can now edit any files, then refresh the page in the browser to view changes
-6. To stop the server from running (in order to use the terminal in VS Code again), press `Ctrl + C`
+2. In `config` folder, change `config-example.env` to `config.env`
+3. If you see `Server is running on port 3000`, you have successfully started the server 
+4. Open browser, go to `localhost:3000`
+5. You should be able to see content from `views/dashboard.ejs` file
+6. You can now edit any files, then refresh the page in the browser to view changes
+7. To stop the server from running (in order to use the terminal in VS Code again), press `Ctrl + C`
 
 ### Add/edit files
 1. To add a new EJS file, run `touch views/file-name-you-want.ejs` from the terminal
