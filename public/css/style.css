@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* resets */
+resets
     * {
         box-sizing: border-box;
         margin: 0;
@@ -11,16 +11,15 @@
     :root {
         /* font family */
         --ff-content: 'Roboto', sans-serif;;
-
-        /* font size */
     }
 
 /* presets */
     body {
         font-family: var(--ff-content);
+        margin-top: 100px;
     }
 
-/* checkmark TO BE DELETED */
+/* checkmark - TO BE DELETED */
     img {
         width: 50px;
     }

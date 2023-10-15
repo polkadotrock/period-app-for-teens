@@ -33,6 +33,7 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 4. You can copy everything from `dashboard.ejs` to your newly created EJS file, then replace the content inside `<body>`
 5. To link to your own JS file from an EJS file, add `<%- include('/js/your-js-file.js') %>` to the bottom of the EJS file (where you would add your `<script>` tag)
 6. To view your new EJS file, go to `routes/index.js` and follow the instruction there
+7. I've added Bootstrap framework. You guys can take a look at the [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
 
 ### Create a pull request
 1. Before you push your commit, run `git pull` to make sure your local repo is up-to-date with the original remote repo
