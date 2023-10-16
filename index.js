@@ -1,8 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const Passage = require("@passageidentity/passage-node");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 // load config !important
 dotenv.config({ path: './config/config.env'});
