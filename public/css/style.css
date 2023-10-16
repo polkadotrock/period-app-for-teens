@@ -2,11 +2,11 @@
 
 /* presets */
     body {
-        margin-top: 100px;
+        margin: 100px auto;
     }
 
 #carouselExample {
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
