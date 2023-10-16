@@ -7,12 +7,6 @@ router.get('/', (req, res) => {
     res.render('dashboard');
 });
 
-// desc     dashboard
-// route    GET /dashboard 
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard');
-});
-
 /*
 ------ TEST YOUR EJS FILE HERE ------
 
