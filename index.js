@@ -11,7 +11,8 @@ const app = express();
 app.use(cors());
 
 // load config !important from the .env file in the root directory
-dotenv.config();
+// dotenv.config(); // use when the .env file is in the root directory
+dotenv.config({ path: './config/config.env' }); // use when the .env file is in the config folder
 
 // export port
 const PORT = process.env.PORT || 3000;
