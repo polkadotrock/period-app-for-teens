@@ -49,4 +49,19 @@ router.get("/dashboard", passageAuthMiddleware, async (req, res) => {
   res.render("dashboard.ejs", { userIdentifier });
 });
 
+// Logout route
+router.get("/logout", (req, res) => {
+  res.clearCookie("passage-session");
+  res.redirect("/");
+});
+
+// Profile route
+router.get("/profile", passageAuthMiddleware, async (req, res) => {
+  const userID = res.userID;
+  const user = await passage.user.get(userID);
+  const appID = passageConfig.appID;
+
+  res.render("profile.ejs", { user, appID });
+});
+
 module.exports = router;
