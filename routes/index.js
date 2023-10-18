@@ -7,14 +7,28 @@ router.get('/', (req, res) => {
     res.render('dashboard');
 });
 
-/*
------- TEST YOUR EJS FILE HERE ------
-
-replace '/test' and 'test' with the name of your file for testing purposes
-in browser, go to http://localhost:3000/test (replace 'test' with the name of your ejs file) to view
-*/
+// desc     learn
+// route    GET /learn
 router.get('/learn', (req, res) => {
     res.render('learn');
+});
+
+// desc     article
+// route    POST /article
+router.post('/article', async (req, res) => {
+    try {
+        res.render('article', { article: req.body.article });
+    } catch (err) {
+        console.error(err);
+        res.redirect('/learn');
+    }
+
+});
+
+// desc     article
+// route    GET /article
+router.get('/article', (req, res) => {
+    res.render('article');
 });
 
 module.exports = router;

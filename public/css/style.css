@@ -164,6 +164,19 @@
         border: 2px solid var(--clr-check);
     }
 
+/* BODY - ARTICLE */
+    button.get-article,
+    .btn {
+        border: none;
+        background: none;
+        font-weight: 700;
+        font-size: var(--fs-body);
+        color: var(--clr-txt-accent);
+    }
+    button.get-article:hover,
+    .btn {
+        color: var(--clr-bg-dark);
+    }
 /* NAVBAR */
     nav.navbar {
         height: 6.5rem;
