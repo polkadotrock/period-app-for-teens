@@ -1,24 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* presets */
+/* RESETS */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+/* CUSTOM PROPERTIES */
+    :root {
+        /* bg colors */
+        --clr-bg-dark: #FA876B;
+        --clr-bg-light1: #FDCFC4;
+        --clr-bg-light2: #FFC9E2;
+        --clr-bg-light3: #FFF0AF;
+        --clr-bg-light4: #B9E5FF;
+        --clr-bg-light5: #D3C1FA;
+        --clr-check: #549b03;
+
+        /* text colors */
+        --clr-txt-dark: #171A1F;
+        --clr-txt-accent: #DE3B40;
+
+        /* font size */
+        --fs-h1: 4rem;
+        --fs-h2: 3.5rem;
+        --fs-h3: 3rem;
+        --fs-h4: 2.5rem;
+        --fs-body: 1.6rem;
+
+        /* spacing */
+        --spc-lg: 5rem;
+        --spc-md: 3rem;
+        --spc-sm: 2rem;
+        --spc-xs: 1rem;
+
+        /* container max width */
+        --width-md: 500px;
+    }
+
+/* PRESETS */
     body {
-        margin: 100px auto;
+        padding-bottom: 100px;
+        font-size: var(--fs-body);
     }
-
-#carouselExample {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-}
-
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-}
-
-/* checkmark - TO BE DELETED */
+    .padding-all-lg {
+        padding: var(--spc-lg);
+    }
+    .padding-all-md {
+        padding: var(--spc-md);
+    }
+    .padding-all-sm {
+        padding: var(--spc-sm);
+    }
+    .padding-ver-lg {
+        padding: var(--spc-lg) 0;
+    }
+    .padding-top-lg {
+        padding-top: var(--spc-lg);
+    }
+    .padding-bottom-lg {
+        padding-bottom: var(--spc-lg);
+    }
+    .padding-top-md {
+        padding-top: var(--spc-md);
+    }
+    .padding-bottom-md {
+        padding-bottom: var(--spc-md);
+    }
+    .margin-top-lg {
+        margin-top: var(--spc-lg);
+    }
+    .margin-top-md {
+        margin-top: var(--spc-md);
+    }
+    .card {
+        border: none;
+    }
     img {
-        width: 50px;
+        max-width: 100%;
+        object-fit: contain;
     }
+    a {
+        color: var(--clr-txt-accent);
+        font-weight: 700;
+        transition: ease-in-out 0.2s;
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--clr-bg-dark);
+    }
+
+/* BODY - HEADER */
+    .body-header {
+        background: var(--clr-bg-dark);
+    }
+
+/* BODY - MAIN */
+    .main {
+        max-width: 100vw;
+    }
+    .main-container {
+        max-width: var(--width-md);
+        margin: auto;
+    }
+    .main-container .img {
+        max-width: 100%;
+        text-align: center;
+    }
+    .main-learn {
+        background: var(--clr-bg-light1);
+    }
+    .main-learn-sm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--spc-md);
+    }
+    .main-learn-sm div:first-child {
+        background: var(--clr-bg-light3);
+    }
+    .main-learn-sm div:last-child {
+        background: var(--clr-bg-light2);
+    }
+
+/* BODY - LEARN */
+    .card-lesson {
+        display: grid;
+        grid-template-columns: 7fr 1fr;
+        background: var(--clr-bg-light1);
+    }
+    .card-lesson:nth-child(3) {
+        background: var(--clr-bg-light2);
+    }
+    .card-lesson:nth-child(4) {
+        background: var(--clr-bg-light3);
+    }
+    .card-lesson:nth-child(5) {
+        background: var(--clr-bg-light4);
+    }
+    .card-lesson:nth-child(6) {
+        background: var(--clr-bg-light5);
+    }
+    .lesson-progress {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        text-align: right;
+    }
+    .lesson-progress span:last-child {
+        place-self: end;
+    }
+    .check {
+        display: inline-block;
+        color: var(--clr-check);
+        text-align: center;
+        line-height: 1.2;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        border: 2px solid var(--clr-check);
+    }
+
+/* NAVBAR */
+    nav.navbar {
+        height: 6.5rem;
+    }    
+    .offcanvas-body {
+        display: flex;
+        justify-content: center;
+    }
+    ul.navbar-nav {
+        max-width: var(--width-md);
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar-nav li i {
+        color: var(--clr-bg-dark);
+        font-size: var(--fs-h4);
+        transition: ease-in-out .2s;
+    }
+    .navbar-nav li i:hover {
+        color: var(--clr-txt-accent);
+    }
+
+/* CAROUSEL */
+    /* container */
+    #carouselExample {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* arrows */
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+/* MEDIA QUERIES */
+    /* @media screen and (max-width: 500px) {} */
