@@ -22,7 +22,6 @@ router.post('/article', async (req, res) => {
         console.error(err);
         res.redirect('/learn');
     }
-
 });
 
 // desc     article
