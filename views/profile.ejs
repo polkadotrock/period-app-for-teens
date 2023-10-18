@@ -1,0 +1,17 @@
+<%- include('partials/_header.ejs') %>
+
+<body>
+    <%- include('partials/_nav.ejs') %>
+   
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <p>This is profile page.
+                <passage-profile app-id="<%= appID %>"></passage-profile>
+                <script src="https://psg.so/web.js"></script>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/_footer.ejs') %>
+</body>

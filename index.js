@@ -1,27 +1,27 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
+const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const cors = require("cors");
+const routes = require('./routes');
 
 const app = express();
 
-// load config !important
-dotenv.config({ path: "./config/config.env" });
+app.use(cors()); // use cors to allow our frontend to make requests to our backend from any origin
 
-// export port
-const PORT = process.env.PORT || 5000;
+dotenv.config({ path: './config/config.env' }); // use this when the .env file is in the config folder to load environmental values
+// use dotenv.config(); when the .env file is in the root directory
 
-app.set("view engine", "ejs");
+const PORT = process.env.PORT; // use the port defined in the .env file
 
-// bodyparser to extra data from forms
-app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs'); // use ejs as the view engine
+app.use(express.urlencoded({ extended: false })); // bodyparser to extra data from forms
+app.use(express.static('public')); // use public folder
+app.use(morgan('dev')); // user morgan to log requests
 
-// use public folder
-app.use(express.static("public"));
+app.get("/", (req, res) => {
+  res.render("dashboard.ejs");
+}); // render the dashboard.ejs file when the user visits the root route
 
-// user morgan to log requests
-app.use(morgan("dev"));
-
-// routes
-app.use("/", require("./routes/index"));
+app.use('/', routes); // Use the routes defined in routes.js
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
