@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
 replace '/test' and 'test' with the name of your file for testing purposes
 in browser, go to http://localhost:3000/test (replace 'test' with the name of your ejs file) to view
 */
-router.get('/test', (req, res) => {
-    res.render('test');
+router.get('/learn', (req, res) => {
+    res.render('learn');
 });
 
 module.exports = router;
