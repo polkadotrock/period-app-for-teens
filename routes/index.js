@@ -1,32 +1,52 @@
-// const express = require('express');
-// const cors = require("cors");
-// const router = express.Router();
+const express = require('express');
+const Passage = require("@passageidentity/passage-node");
+const dotenv = require('dotenv');
+const router = express.Router();
 
-// router.use(cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-// }));
+dotenv.config({ path: './config/config.env' });
 
-// // desc     dashboard
-// // route    GET / 
-// router.get('/', (req, res) => {
-//     res.render('dashboard');
-// });
+// Passage configuration
+const passageConfig = {
+  appID: process.env.PASSAGE_APP_ID,
+  apiKey: process.env.PASSAGE_API_KEY,
+};
 
-// // desc     login
-// // route    POST /login
-// router.post('/login', (req, res) => {
-//     res.render('login');
-// });
+const passage = new Passage(passageConfig); // initialize Passage
 
-// /*
-// ------ TEST YOUR EJS FILE HERE ------
+// Custom Passage middleware
+const passageAuthMiddleware = async (req, res, next) => {
+  try {
+    let userID = await passage.authenticateRequest(req);
+    if (userID) { // User is authenticated
+      res.userID = userID;
+      next(); 
+    }
+  } catch (e) {
+    console.log(e);
+    res.render("unauthorized.ejs"); // render the unauthorized.ejs file if the user is not authenticated
+  }
+};
 
-// replace '/test' and 'test' with the name of your file for testing purposes
-// in browser, go to http://localhost:3000/test (replace 'test' with the name of your ejs file) to view
-// */
-// router.get('/test', (req, res) => {
-//     res.render('test');
-// });
+// Login route
+router.get("/login", (req, res) => {
+  res.render("login.ejs", { appID: passageConfig.appID });
+});
 
-// module.exports = router;
+// Authenticated route that uses the Passage middleware
+router.get("/dashboard", passageAuthMiddleware, async (req, res) => {
+  let userID = res.userID;
+  let user = await passage.user.get(userID);
+
+  console.log(user);
+
+  let userIdentifier;
+  if (user.email) {
+    userIdentifier = user.email;
+  } else if (user.phone) {
+    userIdentifier = user.phone;
+  }
+
+  res.render("dashboard.ejs", { userIdentifier });
+});
+
+module.exports = router;

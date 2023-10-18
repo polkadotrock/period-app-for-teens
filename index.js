@@ -1,86 +1,27 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-const Passage = require("@passageidentity/passage-node");
 const cors = require("cors");
-// const { router } = require('./routes/index.js');
+const routes = require('./routes');
 
 const app = express();
 
-// we use cors to allow our frontend to make requests to our backend from any origin
-app.use(cors());
+app.use(cors()); // use cors to allow our frontend to make requests to our backend from any origin
 
-// load config !important from the .env file in the root directory
-// dotenv.config(); // use when the .env file is in the root directory
-dotenv.config({ path: './config/config.env' }); // use when the .env file is in the config folder
+dotenv.config({ path: './config/config.env' }); // use this when the .env file is in the config folder to load environmental values
+// use dotenv.config(); when the .env file is in the root directory
 
-// export port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT; // use the port defined in the .env file
 
-console.log(process.env.PORT);
-
-app.set('view engine', 'ejs');
-
-// bodyparser to extra data from forms
-app.use(express.urlencoded({ extended: false }));
-
-// use public folder
-app.use(express.static('public'));
-
-// user morgan to log requests
-app.use(morgan('dev'));
+app.set('view engine', 'ejs'); // use ejs as the view engine
+app.use(express.urlencoded({ extended: false })); // bodyparser to extra data from forms
+app.use(express.static('public')); // use public folder
+app.use(morgan('dev')); // user morgan to log requests
 
 app.get("/", (req, res) => {
-    res.render("dashboard.ejs", { appID: process.env.PASSAGE_APP_ID });
-  });
+  res.render("dashboard.ejs");
+}); // render the dashboard.ejs file when the user visits the root route
 
-// Passage config
-const passageConfig = {
-    appID: process.env.PASSAGE_APP_ID,
-    apiKey: process.env.PASSAGE_API_KEY,
-  };
-
-console.log(passageConfig);
-
-// initialize Passage
-app.get("/login", (req, res) => {
-    res.render("login.ejs", { appID: passageConfig.appID });
-});
-
-// custom Passage middleware
-const passage = new Passage(passageConfig);
-const passageAuthMiddleware = (() => {
-    return async (req, res, next) => {
-        try {
-            let userID = await passage.authenticateRequest(req);
-            if (userID) {
-              // user is authenticated
-              res.userID = userID;
-              next();
-            }
-          } catch (e) {
-            console.log(e);
-            res.render("unauthorized.ejs");
-          }
-        };
-      })();
-      
-      // authenticated route that uses middleware
-      app.get("/dashboard", passageAuthMiddleware, async (req, res) => {
-        let userID = res.userID;
-        let user = await passage.user.get(userID);
-
-        console.log(userID);
-        console.log(user);
-      
-        let userIdentifier;
-        if (user.email) {
-          userIdentifier = user.email;
-        } else if (user.phone) {
-          userIdentifier = user.phone;
-        }
-      
-        res.render("dashboard.ejs", { userIdentifier });
-      });
+app.use('/', routes); // Use the routes defined in routes.js
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
