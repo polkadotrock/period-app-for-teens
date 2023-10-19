@@ -65,21 +65,34 @@ router.get("/profile", passageAuthMiddleware, async (req, res) => {
   res.render("profile.ejs", { user, appID });
 });
 
+// GET /guest
+router.get('/guest', (req, res) => {
+    res.render('dashboard-guest');
+});
+
 // GET /learn
-router.get("/learn", (req, res) => {
-  res.render("learn");
+router.get('/learn', (req, res) => {
+    res.render('learn');
 });
+
+// GET /learn-guest
+router.get('/learn-guest', (req, res) => {
+    res.render('learn-guest');
+});
+
 // POST /article
-router.post("/article", async (req, res) => {
-  try {
-    res.render("article", { article: req.body.article });
-  } catch (err) {
-    console.error(err);
-    res.redirect("/learn");
-  }
+router.post('/article', async (req, res) => {
+    try {
+        res.render('article', { article: req.body.article });
+    } catch (err) {
+        console.error(err);
+        res.redirect('/learn');
+    }
 });
+
 // GET /article
-router.get("/article", (req, res) => {
-  res.render("article");
+router.get('/article', (req, res) => {
+    res.render('article');
 });
+
 module.exports = router;
