@@ -60,6 +60,9 @@
     .padding-ver-lg {
         padding: var(--spc-lg) 0;
     }
+    .padding-ver-xs {
+        padding: var(--spc-xs) 0;
+    }
     .padding-top-lg {
         padding-top: var(--spc-lg);
     }
@@ -180,23 +183,43 @@
 /* NAVBAR */
     nav.navbar {
         height: 6.5rem;
-    }    
+        align-self: center;
+    }
+    .navbar .container-fluid {
+        max-width: var(--width-md);
+        padding: 0;
+    } 
+    
     .offcanvas-body {
-        display: flex;
         justify-content: center;
     }
     ul.navbar-nav {
-        max-width: var(--width-md);
         display: flex;
         justify-content: space-between;
     }
-    .navbar-nav li i {
+    .navbar-nav i {
         color: var(--clr-bg-dark);
         font-size: var(--fs-h4);
         transition: ease-in-out .2s;
     }
-    .navbar-nav li i:hover {
+    .navbar-nav i:hover {
         color: var(--clr-txt-accent);
+    }
+    .navbar-nav li.disabled i {
+        color: gray;
+    }
+
+
+/* LOGIN */
+    .btn-guest,
+    .btn-guest-dashboard {
+        background: var(--clr-bg-light1);
+        max-width: var(--width-md);
+        text-align: center;
+        border-radius: 10px;
+    }
+    .btn-guest-dashboard {
+        background: var(--clr-bg-light3);
     }
 
 /* CAROUSEL */
@@ -209,10 +232,110 @@
     /* arrows */
     .carousel-control-prev-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        width: var(--fs-h1);
+        height: var(--fs-h1);
     }
     .carousel-control-next-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+        width: var(--fs-h1);
+        height: var(--fs-h1);
     }
+
+passage-auth {
+    
+    /* Passage Container Styles */
+    --passage-container-background-color: var(--clr-bg-dark);
+    --passage-container-max-width: 100%;
+    --passage-container-margin: auto;
+    --passage-container-padding: 30px 30px 20px;
+
+    /* Error Styles */
+    --passage-error-color: #dd0031;
+    
+    /* Header Text Styles */
+    --passage-header-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --passage-header-font-size: 24px;
+    --passage-header-font-weight: 700;
+    --passage-header-text-color: var(--clr-txt-dark);
+
+    /* Body Text Styles */
+    --passage-body-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --passage-body-font-size: 14px;
+    --passage-body-font-weight: 400;
+    --passage-body-text-color: #000;
+
+    /* Anchor Styles */
+    --passage-anchor-text-color: #000;
+    --passage-anchor-hover-color: #4d4d4d;
+    --passage-anchor-active-color: #6b6b6b;
+
+    /* One-Time Password Styles */
+    --passage-otp-input-background-color: #d7d7d7;
+
+    /* Input Styles */
+    --passage-input-text-color: #000;
+    --passage-control-border-radius: 5px;
+    --passage-control-border-color: #d7d7d7;
+    --passage-control-border-active-color: #000;
+    
+   /* Text Input Styles */
+    --passage-input-box-background-color: #fff;
+    --passage-input-box-border-radius: 5px;
+    
+    /* Checkbox Styles */
+    --passage-checkbox-background-color: #000;
+    --passage-checkbox-text-color: #fff;
+
+    /* Button Styles */
+    --passage-button-font-size: 16px;
+    --passage-button-font-weight: 400;
+    --passage-button-width: 50%;
+
+    --passage-primary-button-background-color: #000;
+    --passage-primary-button-text-color: #fff;
+    
+    --passage-primary-button-border-radius: 5px;
+    --passage-primary-button-border-color: #000;
+    --passage-primary-button-border-width: 0px;
+    
+    --passage-primary-button-text-hover-color: #fff;
+    --passage-primary-button-background-hover-color: #4d4d4d;
+    --passage-primary-button-border-hover-color: #000;
+    
+    --passage-primary-button-text-active-color: #fff;
+    --passage-primary-button-background-active-color: #6b6b6b;
+    --passage-primary-button-border-active-color: #000
+
+    --passage-secondary-button-background-color: #fff;
+    --passage-secondary-button-text-color: #000;
+    
+    --passage-secondary-button-border-radius: 5px;
+    --passage-secondary-button-border-color: #000;
+    --passage-secondary-button-border-width: 1px;
+    
+    --passage-secondary-button-text-hover-color: #000;
+    --passage-secondary-button-background-hover-color: #d7d7d7;
+    --passage-secondary-button-border-hover-color: #4d4d4d;
+    
+    --passage-secondary-button-text-active-color: #000;
+    --passage-secondary-button-background-active-color: #e0e0e0;
+    --passage-secondary-button-border-active-color: #6b6b6b;
+}
+
+passage-profile,
+passage-passkey-table{
+  /* All passage-auth styles still apply */
+  
+  /* Table Styles */
+  --passage-table-header-border-color: #d7d7d7;
+  --passage-table-row-border-color: #e8e8e8;
+  --passage-table-paginator-selected-color: #d7d7d7;
+  --passage-table-paginator-hover-color: #e8e8e8;
+  
+  --passage-table-device-icon-color: #6b6b6b;
+  --passage-table-device-info-color: #6b6b6b;
+  --passage-table-device-icon-hover-color: #6b6b6b;
+}
 
 /* MEDIA QUERIES */
     /* @media screen and (max-width: 500px) {} */
