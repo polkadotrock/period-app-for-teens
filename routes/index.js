@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const Passage = require("@passageidentity/passage-node");
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 const router = express.Router();
 
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: "./config/config.env" });
 
 // Passage configuration
 const passageConfig = {
@@ -17,9 +17,10 @@ const passage = new Passage(passageConfig); // initialize Passage
 const passageAuthMiddleware = async (req, res, next) => {
   try {
     let userID = await passage.authenticateRequest(req);
-    if (userID) { // User is authenticated
+    if (userID) {
+      // User is authenticated
       res.userID = userID;
-      next(); 
+      next();
     }
   } catch (e) {
     console.log(e);
