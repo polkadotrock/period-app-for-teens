@@ -95,4 +95,9 @@ router.get('/article', (req, res) => {
     res.render('article');
 });
 
+// GET /user
+router.get('/user', (req, res) => {
+    res.render('user');
+});
+
 module.exports = router;

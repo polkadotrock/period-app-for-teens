@@ -212,7 +212,8 @@
 
 /* LOGIN */
     .btn-guest,
-    .btn-guest-dashboard {
+    .btn-guest-dashboard,
+    .btn-change-pw {
         background: var(--clr-bg-light1);
         max-width: var(--width-md);
         text-align: center;
@@ -220,6 +221,9 @@
     }
     .btn-guest-dashboard {
         background: var(--clr-bg-light3);
+    }
+    .btn-change-pw {
+        background: var(--clr-bg-light4);
     }
 
 /* CAROUSEL */
