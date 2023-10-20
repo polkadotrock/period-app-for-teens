@@ -32,6 +32,7 @@
         --fs-h2: 3.5rem;
         --fs-h3: 3rem;
         --fs-h4: 2.5rem;
+        --fs-h5: 2rem;
         --fs-body: 1.6rem;
 
         /* spacing */
@@ -90,7 +91,7 @@
         object-fit: contain;
     }
     a {
-        color: var(--clr-txt-accent);
+        color: var(--clr-txt-dark);
         font-weight: 700;
         transition: ease-in-out 0.2s;
         text-decoration: none;
@@ -133,8 +134,8 @@
 
 /* BODY - LEARN */
     .card-lesson {
-        display: grid;
-        grid-template-columns: 7fr 1fr;
+        /* display: grid;
+        grid-template-columns: 7fr 1fr; */
         background: var(--clr-bg-light1);
     }
     .card-lesson:nth-child(3) {
@@ -175,16 +176,22 @@
         background: none;
         font-weight: 700;
         font-size: var(--fs-body);
-        color: var(--clr-txt-accent);
+        color: var(--clr-txt-dark);
     }
     button.get-article:hover,
     .btn {
-        color: var(--clr-bg-dark);
+        color: var(--clr-txt-accent);
+    }
+    .main-container-article {
+        padding: 5rem;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, .07);
     }
 /* NAVBAR */
     nav.navbar {
         height: 6.5rem;
         align-self: center;
+    box-shadow: 40px 15px 40px rgba(0, 0, 0, .3);
     }
     .navbar .container-fluid {
         max-width: var(--width-md);
@@ -235,17 +242,29 @@
     }
 
     /* arrows */
+    .carousel-control-next-icon,
     .carousel-control-prev-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
         width: var(--fs-h1);
         height: var(--fs-h1);
+        position: absolute;
+        top: 320px;
+    }
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FA876B' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        left: 0;
     }
     .carousel-control-next-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-        width: var(--fs-h1);
-        height: var(--fs-h1);
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FA876B' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+        right: 0;
     }
 
+    .carousel-item div {
+        padding-top: calc(5rem + 30px + var(--fs-h1));
+    }
+    .carousel-item img {
+        max-height: 300px;
+        object-fit: cover;
+    }
 /* CALENDAR */
 
 .calendar-main-container {
