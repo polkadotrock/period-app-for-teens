@@ -24,4 +24,4 @@ app.get("/", (req, res) => {
 
 app.use('/', routes); // Use the routes defined in routes.js
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
+app.listen(PORT, () => console.log(`server started on port ${PORT}`));
