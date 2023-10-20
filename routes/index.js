@@ -38,8 +38,6 @@ router.get("/dashboard", passageAuthMiddleware, async (req, res) => {
   let userID = res.userID;
   let user = await passage.user.get(userID);
 
-  console.log(user);
-
   let userIdentifier;
   if (user.email) {
     userIdentifier = user.email;
@@ -98,6 +96,18 @@ router.get('/article', (req, res) => {
 // GET /user
 router.get('/user', (req, res) => {
     res.render('user');
+});
+
+// GET /calendar
+router.get('/calendar', passageAuthMiddleware, (req, res) => {
+    // console.log('res.userid from calendar ', res.userID);
+
+    res.render('calendar', { user: res.userID });
+});
+
+// POST /logcycle
+router.post('/logcycle', passageAuthMiddleware, (req, res) => {
+    console.log('req.body: ', req.body);
 });
 
 module.exports = router;

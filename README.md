@@ -36,9 +36,10 @@ An app built to educate teens about menstruation, reduce stigma, and help teenag
 7. I've added Bootstrap framework. You guys can take a look at the [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
 
 ### Create a pull request
-1. Before you push your commit, run `git pull` to make sure your local repo is up-to-date with the original remote repo
-2. Do your `git add .` and `git commit -m 'msg'`
-3. `git push -u origin your-own-branch` to push
-4. Go to your cloned repo and make a pull request
-5. The `base` should be the original repo, `head` is your own local copy `your-own-branch`
-6. Create pull request
+1. Before you push your commit, go to your forked repo, `sync fork` if needed
+2. Run `git pull` in terminal to make sure your local branch is up-to-date
+3. Do your `git add .` and `git commit -m 'msg'`
+4. `git push -u origin your-own-branch` to push
+5. Go to your cloned repo and make a pull request
+6. The `base` should be the original repo, `head` is your own local copy `your-own-branch`
+7. Create pull request
