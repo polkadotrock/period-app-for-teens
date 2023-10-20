@@ -180,6 +180,7 @@
     .btn {
         color: var(--clr-bg-dark);
     }
+
 /* NAVBAR */
     nav.navbar {
         height: 6.5rem;
@@ -342,4 +343,4 @@ passage-passkey-table{
 }
 
 /* MEDIA QUERIES */
-    /* @media screen and (max-width: 500px) {} */
+    /* @media screen and (max-width: 600px) {} */
