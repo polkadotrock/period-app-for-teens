@@ -108,13 +108,20 @@
 /* BODY - HEADER */
     .body-header {
         background: var(--clr-bg-dark);
-        color: var(--clr-txt-dark)
+        color: var(--clr-txt-dark);
+        max-height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: var(--spc-sm);
+    }
+    .body-header img {
+        height: 40px;
     }
 
 /* BODY - MAIN */
     .main {
         max-width: 100vw;
-        color: var(--clr-txt-dark)
+        color: var(--clr-txt-dark);
     }
     .main-container {
         max-width: var(--width-md);
@@ -127,7 +134,11 @@
     }
     .main-learn {
         background: var(--clr-bg-light1);
-        color: var(--clr-txt-dark)
+        color: var(--clr-txt-dark);
+    }
+    .main-calendar {
+        background: var(--clr-bg-light3);
+
     }
     .main-learn-sm {
         display: grid;
@@ -143,6 +154,12 @@
         background: var(--clr-bg-light2);
         color: var(--clr-txt-dark)
     }
+    .heading-welcome {
+        color: var(--clr-txt-dark);
+    }
+    .heading-welcome span {
+        color: var(--clr-txt-accent);
+    }
 
 /* BODY - LEARN */
     .card-lesson {
@@ -151,19 +168,19 @@
         background: var(--clr-bg-light1);
         color: var(--clr-txt-dark)
     }
-    .card-lesson:nth-child(3) {
+    .card-lesson:nth-child(5n + 3) {
         background: var(--clr-bg-light2);
         color: var(--clr-txt-dark)
     }
-    .card-lesson:nth-child(4) {
+    .card-lesson:nth-child(5n + 4) {
         background: var(--clr-bg-light3);
         color: var(--clr-txt-dark)
     }
-    .card-lesson:nth-child(5) {
+    .card-lesson:nth-child(5n + 5) {
         background: var(--clr-bg-light4);
         color: var(--clr-txt-dark)
     }
-    .card-lesson:nth-child(6) {
+    .card-lesson:nth-child(5n + 6) {
         background: var(--clr-bg-light5);
         color: var(--clr-txt-dark)
     }
@@ -274,7 +291,7 @@
         width: var(--fs-h1);
         height: var(--fs-h1);
         position: absolute;
-        top: 320px;
+        top: 340px;
     }
     .carousel-control-prev-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FA876B' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
@@ -286,11 +303,15 @@
     }
 
     .carousel-item div {
-        padding-top: calc(5rem + 30px + var(--fs-h1));
+        padding-top: calc(60px + var(--fs-h1));
     }
     .carousel-item img {
+        height: 300px;
         max-height: 300px;
         object-fit: cover;
+    }
+    .carousel-item h1 {
+        color: var(--clr-txt-accent);
     }
 /* CALENDAR */
 
@@ -444,23 +465,23 @@ passage-auth {
     
     /* Header Text Styles */
     --passage-header-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    --passage-header-font-size: 24px;
+    --passage-header-font-size: var(--fs-h1);
     --passage-header-font-weight: 700;
     --passage-header-text-color: var(--clr-txt-dark);
 
     /* Body Text Styles */
     --passage-body-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    --passage-body-font-size: 14px;
+    --passage-body-font-size: var(--fs-body);
     --passage-body-font-weight: 400;
-    --passage-body-text-color: #000;
+    --passage-body-text-color: var(--clr-txt-dark);
 
     /* Anchor Styles */
-    --passage-anchor-text-color: #000;
-    --passage-anchor-hover-color: #4d4d4d;
-    --passage-anchor-active-color: #6b6b6b;
+    --passage-anchor-text-color: var(--clr-txt-dark);
+    --passage-anchor-hover-color: var(--clr-bg-light1);
+    --passage-anchor-active-color: var(--clr-bg-light3);
 
     /* One-Time Password Styles */
-    --passage-otp-input-background-color: #d7d7d7;
+    --passage-otp-input-background-color: var(--clr-bg-light1);
 
     /* Input Styles */
     --passage-input-text-color: #000;
