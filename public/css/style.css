@@ -397,7 +397,6 @@
     }
     .period-row {
         display: flex;
-        justify-content: flex-end;
         gap: var(--spc-sm);
     }
 
@@ -407,11 +406,13 @@
     .period-start,
     .period-end {
         flex: 1 0 auto;
+        width: 45%;
     }
     .btn-del-log {
         border: none;
         background: none;
         color: red;
+        width: 10%;
     }
 
 /* CALENDAR */
