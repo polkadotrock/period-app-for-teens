@@ -1,6 +1,11 @@
 const express = require("express");
 const { google } = require("googleapis");
+const { OAuth2 } = google.auth;
+const morgan = require('morgan');
 const router = express.Router();
+const dotenv = require("dotenv");
+
+dotenv.config({ path: "./config/config.env" });
 
 // Set up Google API credentials
 const oAuth2Client = new google.auth.OAuth2(
@@ -12,6 +17,11 @@ const oAuth2Client = new google.auth.OAuth2(
 // Google scopes
 const scopes = ["https://www.googleapis.com/auth/calendar"];
 const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
+
+const app = express();
+
+// Add the morgan middleware for logging HTTP requests
+app.use(morgan('combined'));
 
 // Define function for handling errors
 function handleErrors(error, res, message) {
@@ -41,6 +51,10 @@ router.get("/auth/google/callback", async (req, res) => {
   );
   const { tokens } = await client.getToken(req.query.code);
   oAuth2Client.setCredentials(tokens);
+
+// Set a secure cookie to store the user's password
+  res.cookie('password', req.query.password, { httpOnly: true, secure: true });
+
   res.redirect("/events");
 });
 
@@ -89,5 +103,8 @@ router.post("/events", async (req, res) => {
     handleErrors(error, res, "Error creating calendar event");
   }
 });
+
+// Mount the router middleware
+app.use(router);
 
 module.exports = router;
