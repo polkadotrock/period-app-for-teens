@@ -2,16 +2,20 @@
 
 <body>
     <%- include('partials/_body-header.ejs') %>
-    <%- include('partials/_nav.ejs') %>
-   
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <passage-profile app-id="<%= appID %>"></passage-profile>
-                <script src="https://psg.so/web.js"></script>
+
+    <section class="main padding-ver-lg">
+
+        <div class="main-container">
+            <div class="card">
+                <div class="card-body">
+                    <passage-profile app-id="<%= appID %>"></passage-profile>
+                    <script src="https://psg.so/web.js"></script>
+                </div>
             </div>
-        </div>
     </div>
 
-<%- include('partials/_footer.ejs') %>
+        <%- include('partials/_nav.ejs') %>
+    </section>
 </body>
+
+<%- include('partials/_footer.ejs') %>
