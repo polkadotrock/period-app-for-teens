@@ -25,11 +25,13 @@ const logCycle = async (req, res) => {
   try {
     const days = req.body.days.filter(e => e);
     const month = req.body.month;
+    const monthabbr = req.body.monthabbr;
     const year = req.body.year;
 
     const log = await Log.create({
       days: days,
       month: month,
+      monthabbr: monthabbr,
       year: year,
       user: req.res.userID,
     });
