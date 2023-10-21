@@ -31,7 +31,7 @@
         --fs-h1: 4rem;
         --fs-h2: 3.5rem;
         --fs-h3: 3rem;
-        --fs-button: 2.5rem;
+        --fs-button: 2rem;
         --fs-h4: 2rem;
         --fs-body: 1.6rem;
 
@@ -96,13 +96,14 @@
         object-fit: contain;
     }
     a {
-        color: var(--clr-txt-accent);
+        color: var(--clr-txt-dark);
+        font-size: var(--fs-button);
         font-weight: 700;
         transition: ease-in-out 0.2s;
         text-decoration: none;
     }
     a:hover {
-        color: var(--clr-bg-dark);
+        color: var(--clr-txt-accent);
     }
 
 /* BODY - HEADER */
@@ -142,6 +143,9 @@
     .main-learn-sm div:last-child {
         background: var(--clr-bg-light2);
         color: var(--clr-txt-dark)
+    }
+    .main-learn-v2 {
+        background: var(--clr-bg-light3)
     }
 
 /* BODY - LEARN */
@@ -185,13 +189,6 @@
         border-radius: 50%;
         border: 2px solid var(--clr-check);
     }
-
-/* BUTTON STYLING */
-
-    div.btn-default {
-        color: var(--clr-txt-dark);
-        font-size: var(--fs-button)
-    }    
 
 
 /* BODY - ARTICLE */
@@ -426,72 +423,72 @@ passage-auth {
     
     /* Header Text Styles */
     --passage-header-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    --passage-header-font-size: 24px;
+    --passage-header-font-size: var(--fs-h3);
     --passage-header-font-weight: 700;
     --passage-header-text-color: var(--clr-txt-dark);
 
     /* Body Text Styles */
     --passage-body-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    --passage-body-font-size: 14px;
+    --passage-body-font-size: var(--fs-body);
     --passage-body-font-weight: 400;
-    --passage-body-text-color: #000;
+    --passage-body-text-color: var(--clr-txt-dark);
 
     /* Anchor Styles */
-    --passage-anchor-text-color: #000;
-    --passage-anchor-hover-color: #4d4d4d;
-    --passage-anchor-active-color: #6b6b6b;
+    --passage-anchor-text-color: var(--clr-txt-dark);
+    --passage-anchor-hover-color: var(--clr-txt-dark);
+    --passage-anchor-active-color: var(--clr-txt-dark);
 
     /* One-Time Password Styles */
     --passage-otp-input-background-color: #d7d7d7;
 
     /* Input Styles */
-    --passage-input-text-color: #000;
+    --passage-input-text-color: var(--clr-txt-dark);
     --passage-control-border-radius: 5px;
-    --passage-control-border-color: #d7d7d7;
-    --passage-control-border-active-color: #000;
+    --passage-control-border-color: var(--clr-check);
+    --passage-control-border-active-color: var(--clr-txt-dark);
     
    /* Text Input Styles */
     --passage-input-box-background-color: #fff;
     --passage-input-box-border-radius: 5px;
     
     /* Checkbox Styles */
-    --passage-checkbox-background-color: #000;
-    --passage-checkbox-text-color: #fff;
+    --passage-checkbox-background-color: #fff;
+    --passage-checkbox-text-color: var(--clr-txt-dark);
 
     /* Button Styles */
-    --passage-button-font-size: 16px;
+    --passage-button-font-size: var(--fs-button);
     --passage-button-font-weight: 400;
     --passage-button-width: 50%;
 
-    --passage-primary-button-background-color: #000;
-    --passage-primary-button-text-color: #fff;
+    --passage-primary-button-background-color: var(--clr-bg-light3);
+    --passage-primary-button-text-color: var(--clr-txt-dark);
     
     --passage-primary-button-border-radius: 5px;
-    --passage-primary-button-border-color: #000;
+    --passage-primary-button-border-color: var(--clr-txt-dark);
     --passage-primary-button-border-width: 0px;
     
-    --passage-primary-button-text-hover-color: #fff;
-    --passage-primary-button-background-hover-color: #4d4d4d;
-    --passage-primary-button-border-hover-color: #000;
+    --passage-primary-button-text-hover-color: var(--clr-txt-dark);
+    --passage-primary-button-background-hover-color: var(--clr-bg-light3);
+    --passage-primary-button-border-hover-color: var(--clr-txt-dark);
     
-    --passage-primary-button-text-active-color: #fff;
-    --passage-primary-button-background-active-color: #6b6b6b;
+    --passage-primary-button-text-active-color: var(--clr-txt-dark);
+    --passage-primary-button-background-active-color: var(--clr-bg-light3);
     --passage-primary-button-border-active-color: #000
 
-    --passage-secondary-button-background-color: #fff;
-    --passage-secondary-button-text-color: #000;
+    --passage-secondary-button-background-color: var(--clr-bg-light4);
+    --passage-secondary-button-text-color: var(--clr-txt-dark);
     
     --passage-secondary-button-border-radius: 5px;
-    --passage-secondary-button-border-color: #000;
+    --passage-secondary-button-border-color: var(--clr-txt-dark);
     --passage-secondary-button-border-width: 1px;
     
-    --passage-secondary-button-text-hover-color: #000;
-    --passage-secondary-button-background-hover-color: #d7d7d7;
-    --passage-secondary-button-border-hover-color: #4d4d4d;
+    --passage-secondary-button-text-hover-color: var(--clr-txt-dark);
+    --passage-secondary-button-background-hover-color: var(--clr-txt-dark);
+    --passage-secondary-button-border-hover-color: var(--clr-txt-dark);
     
-    --passage-secondary-button-text-active-color: #000;
-    --passage-secondary-button-background-active-color: #e0e0e0;
-    --passage-secondary-button-border-active-color: #6b6b6b;
+    --passage-secondary-button-text-active-color: var(--clr-txt-dark);
+    --passage-secondary-button-background-active-color: var(--clr-txt-dark);
+    --passage-secondary-button-border-active-color: var(--clr-txt-dark);
 }
 
 passage-profile,
@@ -504,9 +501,9 @@ passage-passkey-table{
   --passage-table-paginator-selected-color: #d7d7d7;
   --passage-table-paginator-hover-color: #e8e8e8;
   
-  --passage-table-device-icon-color: #6b6b6b;
-  --passage-table-device-info-color: #6b6b6b;
-  --passage-table-device-icon-hover-color: #6b6b6b;
+  --passage-table-device-icon-color: var(--clr-txt-dark);
+  --passage-table-device-info-color: var(--clr-txt-dark);
+  --passage-table-device-icon-hover-color: var(--clr-txt-dark);
 }
 
 /* MEDIA QUERIES */
