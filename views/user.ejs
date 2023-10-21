@@ -1,26 +1,2 @@
-<%- include('partials/_header.ejs') %>
-
-<body>
-    <%- include('partials/_body-header.ejs') %>
-
-    <section class="main padding-ver-lg">
-
-        <div class="main-container">
-            <h1>Hello,</h1>
-            <h2>user</h2>
-
-            <div class="btn-default btn-change-pw padding-ver-xs margin-top-lg">
-            <a href="#"><h2>Change Password</h2></a>
-            </div>
-
-            <div class="btn-default btn-guest padding-ver-xs margin-top-lg">
-                <a href="#"><h2>Delete Account</h2></a>
-            </div>
-            
-        </div>
-
-        <%- include('partials/_nav.ejs') %>
-    </section>
-</body>
-
-<%- include('partials/_footer.ejs') %>
+<passage-profile app-id="<%= appID %>"></passage-profile>
+<script src="https://psg.so/web.js"></script>

@@ -43,6 +43,86 @@
 
         /* container max width */
         --width-md: 500px;
+
+/* Passage Container Styles */
+    --passage-container-background-color: var(--clr-bg-light1);
+    --passage-container-max-width: 100%;
+    --passage-container-margin: auto;
+    --passage-container-padding: 30px 30px 20px;
+
+    /* Error Styles */
+    --passage-error-color: #dd0031;
+    
+    /* Header Text Styles */
+    --passage-header-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --passage-header-font-size: var(--fs-h4);
+    --passage-header-font-weight: 700;
+    --passage-header-text-color: var(--clr-txt-dark);
+
+    /* Body Text Styles */
+    --passage-body-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    --passage-body-font-size: var(--fs-body);
+    --passage-body-font-weight: 400;
+    --passage-body-text-color: var(--clr-txt-dark);
+
+    /* Anchor Styles */
+    --passage-anchor-text-color: var(--clr-txt-dark);
+    --passage-anchor-hover-color: var(--clr-bg-light1);
+    --passage-anchor-active-color: var(--clr-bg-light3);
+
+    /* One-Time Password Styles */
+    --passage-otp-input-background-color: var(--clr-bg-light1);
+
+    /* Input Styles */
+    --passage-input-text-color: #000;
+    --passage-control-border-radius: 5px;
+    --passage-control-border-color: #d7d7d7;
+    --passage-control-border-active-color: #000;
+    
+   /* Text Input Styles */
+    --passage-input-box-background-color: #fff;
+    --passage-input-box-border-radius: 5px;
+    
+    /* Checkbox Styles */
+    --passage-checkbox-background-color: #000;
+    --passage-checkbox-text-color: #fff;
+
+    /* Button Styles */
+    --passage-button-font-size: 16px;
+    --passage-button-font-weight: 400;
+    --passage-button-width: 50%;
+
+    --passage-primary-button-background-color: #000;
+    --passage-primary-button-text-color: #fff;
+    
+    --passage-primary-button-border-radius: 5px;
+    --passage-primary-button-border-color: #000;
+    --passage-primary-button-border-width: 0px;
+    
+    --passage-primary-button-text-hover-color: #fff;
+    --passage-primary-button-background-hover-color: #4d4d4d;
+    --passage-primary-button-border-hover-color: #000;
+    
+    --passage-primary-button-text-active-color: #fff;
+    --passage-primary-button-background-active-color: #6b6b6b;
+    --passage-primary-button-border-active-color: #000
+
+    --passage-secondary-button-background-color: #fff;
+    --passage-secondary-button-text-color: #000;
+    
+    --passage-secondary-button-border-radius: 5px;
+    --passage-secondary-button-border-color: #000;
+    --passage-secondary-button-border-width: 1px;
+    
+    --passage-secondary-button-text-hover-color: #000;
+    --passage-secondary-button-background-hover-color: #d7d7d7;
+    --passage-secondary-button-border-hover-color: #4d4d4d;
+    
+    --passage-secondary-button-text-active-color: #000;
+    --passage-secondary-button-background-active-color: #e0e0e0;
+    --passage-secondary-button-border-active-color: #6b6b6b;
+
+
     }
 
     h2 {
@@ -313,144 +393,183 @@
     .carousel-item h1 {
         color: var(--clr-txt-accent);
     }
-/* CALENDAR */
+/* PERIOD LOG */
+    .period-log-container {
+        background: var(--clr-bg-light5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.calendar-main-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.calendar-container {
-    background: var(--clr-bg-light3);
-    width: 450px;
-    border-radius: 10px;
+    .period-title {
+        align-self: center;
+    }
+    .period-row {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--spc-sm);
+    }
+
+    .period-row:nth-child(2n + 1) {
+        background: var(--clr-bg-light2);
+    }
+    .period-start,
+    .period-end {
+        flex: 1 0 auto;
+    }
+    .btn-del-log {
+        border: none;
+        background: none;
+        color: red;
+    }
+
+/* CALENDAR */
+    .calendar-main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .calendar-container {
+        background: var(--clr-bg-light3);
+        width: 450px;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+    }
+    
+    .calendar-weekdays,
+    .calendar-dates {
+        background: rgba(255, 255, 255, .5);
+        padding-bottom: 1.2rem;
+    }
+    .calendar-weekdays {
+        margin-bottom: 0;
+        padding-top: 1.2rem;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .calendar-dates {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .calendar-container header {
+        display: flex;
+        align-items: center;
+        padding: 25px 30px 10px;
+        justify-content: space-between;
+    }
+    
+    header .calendar-navigation {
+        display: flex;
+    }
+    
+    header .calendar-navigation span {
+        height: 38px;
+        width: 38px;
+        margin: 0 1px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 38px;
+        border-radius: 50%;
+        user-select: none;
+        color: #aeabab;
+        font-size: 1.9rem;
+    }
+    
+    .calendar-navigation span:last-child {
+        margin-right: -10px;
+    }
+    
+    header .calendar-navigation span:hover {
+        background: #f2f2f2;
+    }
+    
+    header .calendar-current-date {
+        font-weight: 500;
+        font-size: var(--fs-body);
+    }
+    
+    .calendar-body {
+        padding: 20px;
+    }
+    
+    .calendar-body ul {
+        list-style: none;
+        flex-wrap: wrap;
+        display: flex;
+        text-align: center;
+    }
+    
+    .calendar-body .calendar-dates {
+        margin-bottom: 20px;
+    }
+    
+    .calendar-body li {
+        width: calc(100% / 7);
+        font-size: var(--fs-body);
+        color: #414141;
+    }
+    
+    .calendar-body .calendar-weekdays li {
+        cursor: default;
+        font-weight: 500;
+    }
+    
+    .calendar-body .calendar-dates li {
+        margin-top: 30px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    .calendar-dates li.inactive {
+        color: #aaa;
+    }
+    
+    .calendar-dates li.active,
+    .calendar-dates li.log {
+        color: #fff;
+    }
+    
+    .calendar-dates li::before {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .calendar-dates li.active::before {
+        background: #6332c5;
+    }
+
+    /* period log */
+    .calendar-dates li.log::before {
+        background: var(--clr-txt-accent);
+    }
+    
+    .calendar-dates li:not(.active):hover::before {
+        background: var(--clr-bg-light1);
+    }
+    .calendar-dates li.inactive:hover::before {
+        background: #f2f2f2;
+    }
+
+.main-container-profile {
+    margin: 0 auto;
+    /* max-width: 300px; */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
 }
- 
-.calendar-weekdays,
-.calendar-dates {
-    background: rgba(255, 255, 255, .5);
-    padding-bottom: 1.2rem;
-}
-.calendar-weekdays {
-    margin-bottom: 0;
-    padding-top: 1.2rem;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-.calendar-dates {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-.calendar-container header {
-    display: flex;
-    align-items: center;
-    padding: 25px 30px 10px;
-    justify-content: space-between;
-}
- 
-header .calendar-navigation {
-    display: flex;
-}
- 
-header .calendar-navigation span {
-    height: 38px;
-    width: 38px;
-    margin: 0 1px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 38px;
-    border-radius: 50%;
-    user-select: none;
-    color: #aeabab;
-    font-size: 1.9rem;
-}
- 
-.calendar-navigation span:last-child {
-    margin-right: -10px;
-}
- 
-header .calendar-navigation span:hover {
-    background: #f2f2f2;
-}
- 
-header .calendar-current-date {
-    font-weight: 500;
-    font-size: var(--fs-body);
-}
- 
-.calendar-body {
-    padding: 20px;
-}
- 
-.calendar-body ul {
-    list-style: none;
-    flex-wrap: wrap;
-    display: flex;
-    text-align: center;
-}
- 
-.calendar-body .calendar-dates {
-    margin-bottom: 20px;
-}
- 
-.calendar-body li {
-    width: calc(100% / 7);
-    font-size: var(--fs-body);
-    color: #414141;
-}
- 
-.calendar-body .calendar-weekdays li {
-    cursor: default;
-    font-weight: 500;
-}
- 
-.calendar-body .calendar-dates li {
-    margin-top: 30px;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-}
- 
-.calendar-dates li.inactive {
-    color: #aaa;
-}
- 
-.calendar-dates li.active,
-.calendar-dates li.log {
-    color: #fff;
-}
- 
-.calendar-dates li::before {
-    position: absolute;
-    content: "";
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
- 
-.calendar-dates li.active::before {
-    background: #6332c5;
-}
 
-/* period log */
-.calendar-dates li.log::before {
-    background: var(--clr-txt-accent);
-}
- 
-.calendar-dates li:not(.active):hover::before {
-    background: var(--clr-bg-light1);
-}
-.calendar-dates li.inactive:hover::before {
-    background: #f2f2f2;
-}
+.profile-super {
 
-
+    /* padding: 10px 0; */
+    border-radius: 10px;
+}
 /* PASSAGE */
 passage-auth {
     
@@ -532,7 +651,6 @@ passage-auth {
     --passage-secondary-button-background-active-color: #e0e0e0;
     --passage-secondary-button-border-active-color: #6b6b6b;
 }
-
 passage-profile,
 passage-passkey-table{
   /* All passage-auth styles still apply */
@@ -547,6 +665,14 @@ passage-passkey-table{
   --passage-table-device-info-color: #6b6b6b;
   --passage-table-device-icon-hover-color: #6b6b6b;
 }
+
+/* ::part(passage-table) // The root <table> element
+::part(passage-table-header-row) // <tr> for header row 
+::part(passage-table-header-cell) // <th> for header row 
+::part(passage-table-row) // <tr>
+::part(passage-table-cell) // <td>
+::part(passage-table-expansion-row) // <tr> for expanded row 
+::part(paginator-button) // the <div> element for each button in the paginator */
 
 /* MEDIA QUERIES */
     /* @media screen and (max-width: 600px) {} */

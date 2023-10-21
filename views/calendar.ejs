@@ -8,7 +8,7 @@
         <div class="main-container">
             
             
-            user id is <%= user %> 
+           
 
             <form action="/logcycle" method="POST">
                 <div class="calendar-container">
@@ -52,6 +52,39 @@
                     </button>
                 </div>
             </form>
+
+
+
+
+<div class="period-log-container margin-top-lg padding-all-md">
+<% if (pastCycles.length !== 0) { %>
+    <div class="period-title"><h3>Past Cycles</h3></div>
+    <div class="period-row">
+        <div class="period-start"><h4>Start Date</h4></div>
+        <div class="period-end"><h4>End Date</h4></div>
+        <div class="period-del"></div>
+    </div>
+    <% pastCycles.forEach(e => { %>
+        <div class="period-row">
+            <div class="period-start"><%= e.month + 1 %> - <%= e.days[0] %> - <%= e.year %></div>
+            <div class="period-end"><%= e.month + 1 %> - <%= e.days.slice(-1) %> - <%= e.year %></div>
+            <div class="period-del">
+                <form action="/<%= e._id%>" method="POST" id="del-form">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn-del-log">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                </form>
+            </div>
+        </div>
+   <% }) %>
+<% } else { %>
+    <div class="period-title"><h4>Nothing to log</h4></div>
+<% } %>
+</div>
+
+
+            
         </div>
 
         <%- include('partials/_nav.ejs') %>

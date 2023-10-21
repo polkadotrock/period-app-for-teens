@@ -2,17 +2,27 @@
 
 <body>
     <%- include('partials/_body-header.ejs') %>
-    <%- include('partials/_nav.ejs') %>
-   
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <p>This is profile page.
-                <passage-profile app-id="<%= appID %>"></passage-profile>
-                <script src="https://psg.so/web.js"></script>
+
+    <section class="main padding-ver-lg">
+
+        <div class="main-container">
+            <div class="profile-super">
+                <div class="main-container-profile">
+               
+                <%- include('user.ejs') %>
+                
+                </div>
             </div>
-        </div>
-    </div>
+            <div class="card main-learn">
+                <h3>Log</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ea placeat perspiciatis nihil facilis, totam hic earum nam officiis. Recusandae id libero explicabo nihil rerum quis non. Optio, explicabo porro.</a></p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolorum, aspernatur nemo saepe quam, dignissimos corrupti nobis suscipit consequatur officia placeat, ipsum recusandae iusto nihil at modi odio! Odit, dicta!</p>
+            </div>
+
+
+        <%- include('partials/_nav.ejs') %>
+    </section>
+</body>
 
 <%- include('partials/_footer.ejs') %>
-</body>
