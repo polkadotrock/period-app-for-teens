@@ -66,8 +66,8 @@
     </div>
     <% pastCycles.forEach(e => { %>
         <div class="period-row">
-            <div class="period-start"><%= e.month + 1 %> - <%= e.days[0] %> - <%= e.year %></div>
-            <div class="period-end"><%= e.month + 1 %> - <%= e.days.slice(-1) %> - <%= e.year %></div>
+            <div class="period-start"><%= e.monthabbr %> <%= e.days[0] %>, <%= e.year %></div>
+            <div class="period-end"><%= e.monthabbr %> <%= e.days.slice(-1) %>, <%= e.year %></div>
             <div class="period-del">
                 <form action="/<%= e._id%>" method="POST" id="del-form">
                 <input type="hidden" name="_method" value="DELETE">

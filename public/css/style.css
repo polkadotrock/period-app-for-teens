@@ -386,6 +386,7 @@
     }
 /* PERIOD LOG */
     .period-log-container {
+        width: 100%;
         background: var(--clr-bg-light5);
         display: flex;
         flex-direction: column;
@@ -395,13 +396,11 @@
     .period-title {
         align-self: center;
     }
+
     .period-row {
         display: flex;
         gap: var(--spc-sm);
-    }
-
-    .period-row:nth-child(2n + 1) {
-        background: var(--clr-bg-light2);
+        border-bottom: 1px solid #000;
     }
     .period-start,
     .period-end {
@@ -409,10 +408,12 @@
         width: 45%;
     }
     .btn-del-log {
+        transform: translate(-1.3rem);
         border: none;
         background: none;
         color: red;
         width: 10%;
+        flex-shrink: 0;
     }
 
 /* CALENDAR */

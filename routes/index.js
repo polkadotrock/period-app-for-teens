@@ -176,6 +176,7 @@ router.post('/logcycle', passageAuthMiddleware, async (req, res) => {
       // console.log('req.body: ', req.body);
       const days = req.body.days.filter(e => e);
       const month = req.body.month;
+      const monthabbr = req.body.monthabbr;
       const year = req.body.year;
       // console.log('days', days);
       // console.log(month);
@@ -184,6 +185,7 @@ router.post('/logcycle', passageAuthMiddleware, async (req, res) => {
       const log = await Log.create({
         days: days,
         month: month,
+        monthabbr: monthabbr,
         year: year,
         user: req.res.userID,
       });
