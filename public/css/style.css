@@ -25,6 +25,7 @@
         /* text colors */
         --clr-txt-dark: #060644;
         --clr-txt-accent: #FA876B;
+        --clr-txt-alert: #f84f26;
 
         /* font size */
         --fs-h1: 4rem;
@@ -56,7 +57,7 @@
     --passage-container-padding: 30px 30px 20px;
 
     /* Error Styles */
-    --passage-error-color: #dd0031;
+    --passage-error-color: var(--clr-txt-alert);
     
     /* Header Text Styles */
     --passage-header-font-family: 'Helvetica', BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -414,10 +415,12 @@
     .carousel-item h1 {
         color: var(--clr-txt-accent);
     }
+
 /* PERIOD LOG */
     .period-log-container {
+        background: var(--clr-bg-light1);
         width: 100%;
-        background: var(--clr-bg-light5);
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -425,13 +428,12 @@
 
     .period-title {
         align-self: center;
+        padding-bottom: 5%;
     }
 
     .period-row {
         display: flex;
         gap: var(--spc-sm);
-        border-bottom: 1px solid #000;
-    }
     .period-start,
     .period-end {
         flex: 1 0 auto;
@@ -441,7 +443,7 @@
         transform: translate(-1.3rem);
         border: none;
         background: none;
-        color: red;
+        color: var(--clr-txt-alert);
         width: 10%;
         flex-shrink: 0;
     }
@@ -459,12 +461,14 @@
         max-width: var(--width-sm);
         border-radius: 10px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+        color: var(--clr-txt-dark);
     }
     
     .calendar-weekdays,
     .calendar-dates {
         background: rgba(255, 255, 255, .5);
         padding-bottom: 1.2rem;
+        color: var(--clr-txt-dark);
     }
     .calendar-weekdays {
         margin-bottom: 0;
@@ -486,6 +490,7 @@
     
     header .calendar-navigation {
         display: flex;
+        color: var(--clr-txt-dark);
     }
     
     header .calendar-navigation span {
