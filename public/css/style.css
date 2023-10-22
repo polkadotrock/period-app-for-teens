@@ -34,6 +34,7 @@
         --fs-nav: 2.5rem;
         --fs-h4: 2rem;
         --fs-body: 1.6rem;
+        --fs-copy: 1.3rem;
 
         /* spacing */
         --spc-lg: 5rem;
@@ -633,6 +634,16 @@
   border: 1px solid #b7b7b7;
   box-shadow: 2px 4px #b7b7b7;
 }
+
+/* FOOTER */
+    .footer-container {
+        display: flex;
+        justify-content: center;
+    }
+    .footer {
+        color: var(--clr-txt-dark);
+        font-size: var(--fs-copy);
+    }
 
 /* MEDIA QUERIES (using bootstrap breakpoints as guide) */
     /* X-small devices (< 401px) */
