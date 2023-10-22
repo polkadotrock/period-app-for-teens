@@ -448,13 +448,6 @@
         width: 10%;
         flex-shrink: 0;
     }
-
-/* CALENDAR */
-    /* .calendar-main-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    } */
     
     .calendar-container {
         background: var(--clr-bg-light3);
