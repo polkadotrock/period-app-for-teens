@@ -42,7 +42,7 @@
                     <div class="log-success-msg" style="visibility: hidden";>Cycle logged.</div>
 
                     <div class="btn-calendar-container">
-                        <button type="submit" class="btn-calendar-log padding-ver-xs" id="submit-log">
+                        <button type="submit" class="btn-calendar-log padding-ver-xs" id="submit-log" aria-label="submit log button">
                             <h3>Log Period</h3>
                         </button>
                     </div>
@@ -64,7 +64,7 @@
                             <div class="period-del">
                                 <form action="/<%= e._id%>" method="POST" id="del-form">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn-del-log">
+                                <button type="submit" class="btn-del-log" aria-label="delete log button">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>
                                 </form>
