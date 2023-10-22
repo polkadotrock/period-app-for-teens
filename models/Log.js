@@ -9,6 +9,10 @@ const LogSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    monthabbr: {
+        type: String,
+        required: true,
+    },
     year: {
         type: Number,
         required: true,

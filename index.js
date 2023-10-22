@@ -50,7 +50,7 @@ app.use(methodOverride(function (req, res) {
 
 // app.get("/", (req, res) => {
 //   res.render("dashboard-guest.ejs");
-// }); // render the dashboard.ejs file when the user visits the root route
+// });
 
 app.use('/', routes); // Use the routes defined in routes.js
 

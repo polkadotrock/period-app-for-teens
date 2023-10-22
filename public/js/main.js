@@ -1,6 +1,9 @@
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
+
+// add copyright year in footer
+document.getElementById('copy-year').innerHTML = year;
  
 const day = document.querySelector(".calendar-dates");
  
@@ -24,6 +27,21 @@ const months = [
     "October",
     "November",
     "December"
+];
+
+const monthabbr = [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec."
 ];
  
 // Function to generate the calendar
@@ -83,6 +101,7 @@ const manipulate = () => {
      
     // add input values for month and year
     currdate.innerHTML += `<input type="hidden" name="month" value=${month}>`;
+    currdate.innerHTML += `<input type="hidden" name="monthabbr" value=${monthabbr[month]}>`;
     currdate.innerHTML += `<input type="hidden" name="year" value=${year}>`;
     
     // update the HTML of the dates element 
@@ -134,21 +153,21 @@ prenexIcons.forEach(icon => {
     });
 });
 
-// add EvenListener when submit button is clicked
-document.getElementById('submit-log').addEventListener('click', clearCalendar);
+// // add EvenListener when submit button is clicked
+// document.getElementById('submit-log').addEventListener('click', clearCalendar);
 
-// clear calendar after submitted
-function clearCalendar () {
-    const selectedDays = document.getElementsByClassName('log');
+// // clear calendar after submitted
+// function clearCalendar () {
+//     const selectedDays = document.getElementsByClassName('log');
 
-    Array.from(selectedDays).forEach(e => {
-        const test = document.getElementById(`inputday${e.innerText}`);
-        console.log('test is ', test);
-        e.classList.toggle('log');
-    });
-    console.log('month ', month, 'year ', year);
+//     Array.from(selectedDays).forEach(e => {
+//         const test = document.getElementById(`inputday${e.innerText}`);
+//         console.log('test is ', test);
+//         e.classList.toggle('log');
+//     });
+//     console.log('month ', month, 'year ', year);
     
-}
+// }
 
 // add EventListener to each date
 const getDates = document.getElementsByClassName('each-date');
@@ -186,3 +205,4 @@ function addPeriod(click) {
 //     });
 //     console.log(daysArr);
 // }
+
