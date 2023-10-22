@@ -5,86 +5,76 @@
 
     <section class="main padding-ver-lg calendar-main-container">
 
-        <div class="main-container">
+        <div class="main-container main-container-cal-log">
             
-            
-           
+            <div class="calendar-wrapper">   
 
-            <form action="/logcycle" method="POST">
-                <div class="calendar-container">
-                    <header class="calendar-header">
-                        <p class="calendar-current-date"></p>
-                        <div class="calendar-navigation">
-                            <span id="calendar-prev"
-                                class="material-symbols-rounded">
-                                chevron_left
-                            </span>
-                            <span id="calendar-next"
-                                class="material-symbols-rounded">
-                                chevron_right
-                            </span>
+                <form action="/logcycle" method="POST">
+                    <div class="calendar-container">
+                        <header class="calendar-header">
+                            <p class="calendar-current-date"></p>
+                            <div class="calendar-navigation">
+                                <span id="calendar-prev"
+                                    class="material-symbols-rounded">
+                                    chevron_left
+                                </span>
+                                <span id="calendar-next"
+                                    class="material-symbols-rounded">
+                                    chevron_right
+                                </span>
+                            </div>
+                        </header>
+                
+                        <div class="calendar-body">
+                            <ul class="calendar-weekdays">
+                                <li>Sun</li>
+                                <li>Mon</li>
+                                <li>Tue</li>
+                                <li>Wed</li>
+                                <li>Thu</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                            </ul>
+                            <ul class="calendar-dates"></ul>
                         </div>
-                    </header>
-            
-                    <div class="calendar-body">
-                        <ul class="calendar-weekdays">
-                            <li>Sun</li>
-                            <li>Mon</li>
-                            <li>Tue</li>
-                            <li>Wed</li>
-                            <li>Thu</li>
-                            <li>Fri</li>
-                            <li>Sat</li>
-                        </ul>
-                        <ul class="calendar-dates"></ul>
                     </div>
-                </div>
 
-                <div class="log-success-msg" style="visibility: hidden";>Cycle logged.</div>
+                    <div class="log-success-msg" style="visibility: hidden";>Cycle logged.</div>
 
-                <div class="main-learn-sm">
-                    
-                    <div class="btn-guest-dashboard padding-ver-xs ">
-                        <h3>View Past Cycles</h3>
+                    <div class="btn-calendar-container">
+                        <button type="submit" class="btn-calendar-log padding-ver-xs" id="submit-log">
+                            <h3>Log Period</h3>
+                        </button>
                     </div>
-                    <button type="submit" class="btn-guest-dashboard padding-ver-xs" id="submit-log">
-                        <h3>Log Period</h3>
-                    </button>
-                </div>
-            </form>
-
-
-
-
-<div class="period-log-container margin-top-lg padding-all-md">
-<% if (pastCycles.length !== 0) { %>
-    <div class="period-title"><h3>Past Cycles</h3></div>
-    <div class="period-row">
-        <div class="period-start"><h4>Start Date</h4></div>
-        <div class="period-end"><h4>End Date</h4></div>
-        <div class="period-del"></div>
-    </div>
-    <% pastCycles.forEach(e => { %>
-        <div class="period-row">
-            <div class="period-start"><%= e.monthabbr %> <%= e.days[0] %>, <%= e.year %></div>
-            <div class="period-end"><%= e.monthabbr %> <%= e.days.slice(-1) %>, <%= e.year %></div>
-            <div class="period-del">
-                <form action="/<%= e._id%>" method="POST" id="del-form">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="btn-del-log">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
                 </form>
             </div>
-        </div>
-   <% }) %>
-<% } else { %>
-    <div class="period-title"><h4>Nothing to log</h4></div>
-<% } %>
-</div>
 
-
-            
+            <div class="period-log-container margin-top-lg padding-all-md">
+                <% if (pastCycles.length !== 0) { %>
+                    <div class="period-title"><h3>Past Cycles</h3></div>
+                    <div class="period-row">
+                        <div class="period-start"><h4>Start Date</h4></div>
+                        <div class="period-end"><h4>End Date</h4></div>
+                        <div class="period-del"></div>
+                    </div>
+                    <% pastCycles.forEach(e => { %>
+                        <div class="period-row">
+                            <div class="period-start"><%= e.monthabbr %> <%= e.days[0] %>, <%= e.year %></div>
+                            <div class="period-end"><%= e.monthabbr %> <%= e.days.slice(-1) %>, <%= e.year %></div>
+                            <div class="period-del">
+                                <form action="/<%= e._id%>" method="POST" id="del-form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn-del-log">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                </form>
+                            </div>
+                        </div>
+                <% }) %>
+                <% } else { %>
+                    <div class="period-title"><h4>Nothing to log</h4></div>
+                <% } %>
+            </div>
         </div>
 
         <%- include('partials/_nav.ejs') %>
