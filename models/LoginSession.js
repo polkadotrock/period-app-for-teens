@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const LoginSessionSchema = new mongoose.Schema({
     userID: {
         type: String,
         require: true
@@ -9,15 +9,16 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    username: {
-        type: String,
+    startDate: {
+        type: Date,
         require: true
     },
-    createdAt: {
+    lastLogin: {
         type: Date,
-        default: Date.now
+        require: true
     },
+    loginCount: {
+        type: Number,
+        require: true
+    }
 });
-
-// export as a mongoose model
-module.exports = mongoose.model('User', UserSchema);
