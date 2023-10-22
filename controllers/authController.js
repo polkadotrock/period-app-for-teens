@@ -28,40 +28,53 @@ const passageAuthMiddleware = async (req, res, next) => {
 const login = async (req, res) => {
   try {
     res.render("login.ejs", { appID: passageConfig.appID });
+    req.session.userLoggedIn = true;
   } catch (err) {
     console.error(err);
     res.redirect("/");
   }
 };
+
+// const dashboard = async (req, res) => {
+//   try {
+//     let userID = res.userID;
+//     let user = await passage.user.get(userID);
+
+//     let userIdentifier;
+//     if (user.email) {
+//       userIdentifier = user.email;
+//     } else if (user.phone) {
+//       userIdentifier = user.phone;
+//     }
+
+//     res.render("dashboard.ejs", { userIdentifier });
+//   } catch (err) {
+//     console.error(err);
+//     res.render("dashboard-guest");
+//   }
+// };
 
 const dashboard = async (req, res) => {
   try {
-    let userID = res.userID;
-    let user = await passage.user.get(userID);
-
-    let userIdentifier;
-    if (user.email) {
-      userIdentifier = user.email;
-    } else if (user.phone) {
-      userIdentifier = user.phone;
-    }
-
-    res.render("dashboard.ejs", { userIdentifier });
+    res.render('dashboard', { userLoggedIn: req.session.userLoggedIn });
   } catch (err) {
     console.error(err);
-    res.render("dashboard-guest");
+    res.render('dashboard-guest');
   }
 };
 
-const logout = async (req, res) => {
+
+const logout = (req, res) => {
   try {
-    res.clearCookie("passage-session");
+    res.clearCookie("psg-auth-token", { path: "/" });
+    req.session.userLoggedIn = false;
     res.redirect("/");
   } catch (err) {
     console.error(err);
     res.redirect("/");
   }
 };
+
 
 const profile = async (req, res) => {
   try {
@@ -99,8 +112,8 @@ const update = async (req, res) => {
 const deleteAccount = async (req, res) => {
   try {
     const userID = res.userID;
-    await passage.user.delete(userID);
-
+    const deletedUser = await passage.user.delete(userID);
+    console.log(deletedUser);
     res.redirect("/");
   } catch (err) {
     console.error(err);

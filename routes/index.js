@@ -3,6 +3,17 @@ const router = express.Router();
 const authController = require("../controllers/authController");
 const logController = require("../controllers/logController");
 
+// Home route
+router.get("/", (req, res) => {
+  try {
+    authController.login(req, res);
+  } catch (err) {
+    console.error(err);
+    res.redirect('/dashboard-guest.ejs');
+  }
+});
+
+
 // Login route
 router.get("/login", (req, res) => {
   try {
@@ -54,7 +65,7 @@ router.post("/profile", authController.passageAuthMiddleware, (req, res) => {
 });
 
 // Delete account route
-router.post("/delete-account", authController.passageAuthMiddleware, (req, res) => {
+router.get("/delete-account", authController.passageAuthMiddleware, (req, res) => {
   try {
     authController.deleteAccount(req, res);
   } catch (err) {
@@ -62,6 +73,7 @@ router.post("/delete-account", authController.passageAuthMiddleware, (req, res) 
     res.render('unauthorized.ejs');
   }
 });
+
 
 // Guest route
 router.get('/guest', (req, res) => {
