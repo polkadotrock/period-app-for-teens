@@ -5,30 +5,38 @@
 
     <section class="main padding-ver-lg">
 
-        <div class="main-container">
-            <h1>Welcome to</h1>
-            <h2>onni.</h2>
-            <div class="img padding-bottom-md"><img src="/images/carousel/1.jpg"></div>
-            <!-- <p>Lorem ipsum dolor sit amet consectetur.</p> -->
-
-            <h1 class="margin-top-lg">Ready to start learning?</h1>
-
-            <div class="card margin-top-md padding-all-sm main-learn">
-                <h3>Learn</h3>
-                <p>More than 60% of teenage women report not knowing about menstruation. <a href="/learn">Learn more &raquo;</a></p>
+        <div class="main-container main-container-dashboard">
+            <div class="main-container-wrapper">
+                <h1>Welcome to</h1>
+                <h2>onni.</h2>
+                <div class="img padding-bottom-md"><img src="/images/carousel/1.jpg"></div>
             </div>
+            <div class="main-container-wrapper">
+                <h1 class="margin-top-lg">Ready to start learning?</h1>
 
-            <div>
-                <div class="card margin-top-md padding-all-sm main-learn-v2">
-                    <h3>Calendar Tracking</h3>
-                    <p>Track your cycle, it's completely private. <br><a href="/calendar">Track your cycle &raquo;</a></p>
+                <div class="dashboard-wrapper">
+                    <div class="card margin-top-md padding-all-sm main-learn">
+                        <div class="dashboard-calendar">
+                            <i class="fa-regular fa-newspaper dashboard-fa"></i>
+                        </div>
+                        <div>
+                            <h3>Learn</h3>
+                            <p>More than 60% of teenage women report not knowing about menstruation. <a href="/learn" class="dashboard-link">Learn more &raquo;</a></p>
+                        </div>
+                    </div>
+
+                
+                    <div class="card margin-top-md padding-all-sm main-learn">
+                        <div class="dashboard-calendar">
+                            <i class="fa-regular fa-calendar-days dashboard-fa"></i>
+                        </div>
+                        <div>
+                            <h3>Calendar Tracking</h3>
+                            <p>Track your cycle, it's completely private. <br><a href="/calendar" class="dashboard-link">Track your cycle &raquo;</a></p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="card padding-all-sm">
-                    <h3>Quizzes</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div> -->
             </div>
-            
         </div>
 
         <%- include('partials/_nav.ejs') %>
