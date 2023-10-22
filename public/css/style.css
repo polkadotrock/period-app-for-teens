@@ -434,6 +434,7 @@
     .period-row {
         display: flex;
         gap: var(--spc-sm);
+    }
     .period-start,
     .period-end {
         flex: 1 0 auto;
