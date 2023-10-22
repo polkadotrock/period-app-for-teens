@@ -67,7 +67,7 @@ const dashboard = async (req, res) => {
 const logout = (req, res) => {
   try {
     res.clearCookie("psg-auth-token", { path: "/" });
-    req.session.userLoggedIn = true;
+    req.session.userLoggedIn = false;
     res.redirect("/");
   } catch (err) {
     console.error(err);
