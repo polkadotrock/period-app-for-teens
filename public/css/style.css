@@ -29,8 +29,8 @@
 
         /* font size */
         --fs-h1: 4rem;
-        --fs-h2: 3.5rem;
-        --fs-h3: 3rem;
+        --fs-h2: 3rem;
+        --fs-h3: 2.5rem;
         --fs-button: 2rem;
         --fs-nav: 2.5rem;
         --fs-h4: 2rem;
@@ -132,9 +132,24 @@
 
     }
 
-    h2 {
+    .accent-text {
         color: var(--clr-txt-accent);
-        font-size: var(--fs-h2)
+        font-size: var(--fs-h1)
+    }
+    h1 {
+        font-size: var(--fs-h1);
+    }
+
+    h2 {
+        font-size: var(--fs-h2);
+    }
+    
+    h3{
+        font-size:var(--fs-h3);
+    }
+
+    h4{
+        font-size: var(--fs-h4);
     }
 
 /* PRESETS */
@@ -438,6 +453,7 @@
     .period-row {
         display: flex;
         gap: var(--spc-sm);
+        border-bottom: thin solid var(--clr-txt-dark);
     }
     .period-start,
     .period-end {
@@ -514,7 +530,7 @@
     
     header .calendar-current-date {
         font-weight: 500;
-        font-size: var(--fs-body);
+        font-size: var(--fs-h3);
     }
     
     .calendar-body {
