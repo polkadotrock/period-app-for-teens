@@ -1,6 +1,9 @@
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
+
+// add copyright year in footer
+document.getElementById('copy-year').innerHTML = year;
  
 const day = document.querySelector(".calendar-dates");
  
@@ -202,3 +205,4 @@ function addPeriod(click) {
 //     });
 //     console.log(daysArr);
 // }
+
