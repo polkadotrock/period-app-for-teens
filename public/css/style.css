@@ -36,6 +36,7 @@
         --fs-h4: 2rem;
         --fs-body: 1.6rem;
         --fs-copy: 1.3rem;
+        --fs-logo: 4rem;
 
         /* spacing */
         --spc-lg: 5rem;
@@ -203,6 +204,9 @@
     }
     .body-header img {
         height: 40px;
+    }
+    .logo {
+        font-size: var(--fs-logo);
     }
 
 /* BODY - MAIN */
@@ -681,9 +685,9 @@
 
     /* Large devices (desktops, 992px and up) */
     @media (min-width: 992px) {
-        /* :root {
-            --passage-container-max-width: var(--width-lg);
-        } */
+        :root {
+            --fs-logo: 4.5rem;
+        }
         .main-container{
             max-width: var(--width-lg);
         }
