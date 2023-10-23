@@ -14,7 +14,6 @@ This project was created in October 2023 for the WWCode Hackathon for Social Goo
 * Serena
 * Terra
 
-## About the Application
 ### Tech Stack
 * HTML & EJS
 * CSS & Bootstrap
@@ -22,7 +21,11 @@ This project was created in October 2023 for the WWCode Hackathon for Social Goo
 * Node.js
 * Express.js
 * MongoDB
+* For user authentication, we used Passage by 1Password.
+
+## About the Application
 These are the main features of our application.
+
 ### Home Page / Dashboard
 Welcomes the user, and allows them to register or continue as guest.
 ### Learn
