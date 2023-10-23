@@ -1,5 +1,5 @@
 # onni.
-![Screenshot of onni. homepage, featuring a cartoon uterus waving](public/images/screenshots/onni-mobile-homepage.png)
+<img src="public/images/screenshots/onni-mobile-homepage.png" alt="Screenshot of onni. homepage, featuring a cartoon uterus waving" height="50%" width="50%">
 
 This is a friendly web application that provides accessible, fact-checked information about periods for kids and teens. It provides information and tracking features all in one place.
 
