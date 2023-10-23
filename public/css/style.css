@@ -135,12 +135,15 @@
         color: var(--clr-txt-accent);
         font-size: var(--fs-h1)
     }
+
     h1 {
         font-size: var(--fs-h1);
+        color: var(--clr-txt-dark);
     }
 
     h2 {
         font-size: var(--fs-h2);
+        color: var(--clr-txt-dark);
     }
     
     h3{
@@ -428,7 +431,7 @@
         object-fit: cover;
     }
     .carousel-item h1 {
-        color: var(--clr-txt-accent);
+        color: var(--clr-txt-dark);
     }
 
 /* PERIOD LOG */
