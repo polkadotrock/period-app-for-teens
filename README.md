@@ -7,21 +7,21 @@ This is a friendly web application that provides accessible, fact-checked inform
 This project was created in October 2023 for the WWCode Hackathon for Social Good by **Team Bloody Warriors**.
 
 ## Team **Bloody Warriors** Members
-Aazeen
-Anastasia
-Jennie
-Nidhi
-Serena
-Terra
+* Aazeen
+* Anastasia
+* Jennie
+* Nidhi
+* Serena
+* Terra
 
 ## About the Application
 ### Tech Stack
-HTML & EJS
-CSS & Bootstrap
-JavaScript
-Node.js
-Express.js
-MongoDB
+* HTML & EJS
+* CSS & Bootstrap
+* JavaScript
+* Node.js
+* Express.js
+* MongoDB
 These are the main features of our application.
 ### Home Page / Dashboard
 Welcomes the user, and allows them to register or continue as guest.
