@@ -31,3 +31,5 @@ Features articles and resources about menstruation. Articles are written in acce
 Allows users to create and delete entries to track periods. Requires log in.
 ### Profile
 Users can log in using a passkey. We used 1password for our user authentication.
+### Credits
+All photos are from pexels.com. Cute uterus illustrations are from Canva (pro). Information cited is in individual articles under "sources".
