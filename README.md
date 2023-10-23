@@ -1,5 +1,5 @@
 # onni.
-![Screenshot of a onni. app homepage](https://myoctocat.com/assets/images/base-octocat.svg)
+![Screenshot of onni. homepage, featuring a cartoon uterus waving](https://myoctocat.com/assets/images/base-octocat.svg)
 
 This is a friendly web application that provides accessible, fact-checked information about periods for kids and teens. It provides information and tracking features all in one place.
 
@@ -29,5 +29,5 @@ Welcomes the user, and allows them to register or continue as guest.
 Features articles and resources about menstruation. Articles are written in accessible language, without overly clinical or medical language. No log in required.
 ### Calendar
 Allows users to create and delete entries to track periods. Requires log in.
-### Log in
+### Profile
 Users can log in using a passkey. We used 1password for our user authentication.
