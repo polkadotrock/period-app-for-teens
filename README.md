@@ -1,5 +1,5 @@
 # onni.
-![Screenshot of onni. homepage, featuring a cartoon uterus waving](https://myoctocat.com/assets/images/base-octocat.svg)
+![Screenshot of onni. homepage, featuring a cartoon uterus waving](public/images/screenshots/onni-mobile-homepage.png)
 
 This is a friendly web application that provides accessible, fact-checked information about periods for kids and teens. It provides information and tracking features all in one place.
 
